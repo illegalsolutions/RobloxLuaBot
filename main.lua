@@ -1,11 +1,12 @@
 local StarterGui = game:GetService("StarterGui")
 local TeleportService = game:GetService("TeleportService")
-local player = game.Players.LocalPlayer
+local Player = game.Players.LocalPlayer
 local Chat = game:GetService("Chat")
 
 
-
 local Bot = {}
+
+--// FUNCTIONLAR
 
 function Bot.walkto(pos1,pos2,pos3)
     game.Players.LocalPlayer.Character.Humanoid:MoveTo(Vector3.new(pos1,pos2,pos3))
@@ -21,6 +22,10 @@ end
 
 function Bot.exit()
     game:Shutdown()
+end
+
+function Bot.Chat(msg)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg,"All")
 end
 
 function Bot.findbackdoorandlag(path)
@@ -73,3 +78,16 @@ end
 function Bot.run(scr)
     loadstring(scr)()
 end
+
+
+--//FUNCTIONLAR BITIŞ
+
+--//EVENTLER
+Chat.Chatted:Connect(function(msg)
+    
+end)
+--//EVENTLER BITIş
+
+--//BAŞLANGIC SCRIPTLERI
+
+--//BAŞLANGIC SCRIPTLERI BITIŞ

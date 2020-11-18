@@ -16,8 +16,18 @@ Chat.Chatted:Connect(function(plr,msg)
     end
 end)
 
+function jmp()
+    while wait(13) do
+        Bot.jump()
+    end
+end
 
-Bot.Walkto(math.random(-900000000,900000000),math.random(-900000000,900000000),math.random(-900000000,900000000)) -- RANDOM WALK
+function wlk()
+    while wait(30) do
+        Bot.walkto(math.random(-900000000,900000000),math.random(-900000000,900000000),math.random(-900000000,900000000)) -- RANDOM WALK
+    end
+end
+
     Bot.Chat(tostring(reply[math.random(1,#reply)]))
     wait(2)
     Bot.Chat(tostring(startermessage[math.random(1,#startermessage)]))
@@ -25,3 +35,6 @@ Bot.Walkto(math.random(-900000000,900000000),math.random(-900000000,900000000),m
         Bot.jump()
     end 
  Bot.antiafk(true)
+
+jmp()
+wlk()

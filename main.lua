@@ -1,12 +1,15 @@
+--[[
+Made by AtKnSploits and OnlySploits
+--]]
+
+
 local StarterGui = game:GetService("StarterGui")
 local TeleportService = game:GetService("TeleportService")
 local Player = game.Players.LocalPlayer
 local Chat = game:GetService("Chat")
-
+local vu = game:GetService("VirtualUser")
 
 local Bot = {}
-
---// FUNCTIONLAR
 
 function Bot.walkto(pos1,pos2,pos3)
     game.Players.LocalPlayer.Character.Humanoid:MoveTo(Vector3.new(pos1,pos2,pos3))
@@ -78,16 +81,12 @@ end
 function Bot.run(scr)
     loadstring(scr)()
 end
+function Bot.antiafk(trueorfalse)
+    _G.AntiAfkOpened = trueorfalse
+end
 
-
---//FUNCTIONLAR BITIŞ
-
---//EVENTLER
-Chat.Chatted:Connect(function(msg)
-    
-end)
---//EVENTLER BITIş
-
---//BAŞLANGIC SCRIPTLERI
-
---//BAŞLANGIC SCRIPTLERI BITIŞ
+while _G.AntiAfkOpened do wait() -- event sayılır 
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end

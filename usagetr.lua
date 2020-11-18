@@ -16,10 +16,10 @@ Chat.Chatted:Connect(function(plr,msg)
 end)
 
 
-
+Bot.Walkto(math.random(-900000000,900000000),math.random(-900000000,900000000),math.random(-900000000,900000000)) -- RANDOM WALK
     Bot.Chat(tostring(baslangicsaas[math.random(1,#baslangicsaas)]))
     wait(2)
-    Bot.Chat(tostring(baslangicsaas[math.random(1,#baslangic2)]))
+    Bot.Chat(tostring(baslangic2[math.random(1,#baslangic2)]))
     while wait(13) do
         Bot.jump()
     end 

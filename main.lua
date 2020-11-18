@@ -34,9 +34,9 @@ end
 function Bot.findbackdoorandlag(path)
     for i,v in pairs(path:GetDescendants()) do
         if v:IsA("RemoteEvent") then
-            v:FireServer("Instance.new(\"Part\",workspace).Name = \"BACKD00R\"")
+            v:FireServer("Instance.new("Part",workspace).Name = "BACKD00R")
             if workspace:WaitForChild("BACKD00R") then
-                v:FireServer("while wait() do Instance.new(\"Part\",workspace).Size = Vector3.new(200,200,200) end")
+                v:FireServer("while wait() do Instance.new("Part",workspace).Size = Vector3.new(200,200,200) end")
             end
         end
     end
@@ -85,8 +85,8 @@ function Bot.antiafk(trueorfalse)
     _G.AntiAfkOpened = trueorfalse
 end
 
-while _G.AntiAfkOpened do wait() -- event sayılır 
+while _G.AntiAfkOpened do wait()
     vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     wait(1)
     vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end
+end

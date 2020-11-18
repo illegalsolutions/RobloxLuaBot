@@ -11,16 +11,16 @@ local startermessage = {"What's going on"}
 Chat.Chatted:Connect(function(plr,msg)
     if msg == "hello" and msg == "Hello" and msg == "hi" and msg == "Hi" then
         if not plr == Player then
-            Bot.Chat(tostring(baslangicsaas[math.random(1,#reply)]))
+            Bot.Chat(tostring(reply[math.random(1,#reply)]))
         end
     end
 end)
 
 
-
-    Bot.Chat(tostring(baslangicsaas[math.random(1,#reply)]))
+Bot.Walkto(math.random(-900000000,900000000),math.random(-900000000,900000000),math.random(-900000000,900000000)) -- RANDOM WALK
+    Bot.Chat(tostring(reply[math.random(1,#reply)]))
     wait(2)
-    Bot.Chat(tostring(baslangicsaas[math.random(1,#startermessage)]))
+    Bot.Chat(tostring(startermessage[math.random(1,#startermessage)]))
     while wait(13) do
         Bot.jump()
     end 

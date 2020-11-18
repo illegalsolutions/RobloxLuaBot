@@ -32,3 +32,6 @@ end
     Bot.Chat(tostring(baslangic2[math.random(1,#baslangic2)]))
      
  Bot.antiafk(true)
+
+jmp()
+wlk()

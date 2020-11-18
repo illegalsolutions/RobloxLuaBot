@@ -44,3 +44,7 @@ end
 function unequip(name)
     game.Players.LocalPlayer.Character[name].Parent = game.Players.LocalPlayer.Backpack
 end
+
+function kill()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end

@@ -22,7 +22,7 @@ function findbackdoor()
     print("Cooming Soon!")
 end
 
-function run(scr)
+function execute(scr)
     print("Cooming Soon!")
 end
 
@@ -47,4 +47,8 @@ end
 
 function kill()
     game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+
+function run(scr)
+    loadstring(scr)()
 end

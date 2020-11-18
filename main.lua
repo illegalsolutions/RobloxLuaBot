@@ -28,6 +28,7 @@ end
 
 function join(place)
     game.Players.LocalPlayer:Kick("Joining..")
+    wait(10)
     game:GetService("TeleportService"):Teleport(place, game.Players.LocalPlayer)
 end
 
@@ -36,3 +37,10 @@ function rejoin()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 end
 
+function equip(name)
+    game.Players.LocalPlayer.Backpack[name].Parent = game.Players.LocalPlayer.Character
+end
+
+function unequip(name)
+    game.Players.LocalPlayer.Character[name].Parent = game.Players.LocalPlayer.Backpack
+end

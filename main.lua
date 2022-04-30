@@ -42,27 +42,13 @@ function Bot.findbackdoorandlag(path)
     end
 end
 
-function Bot.execute(scr)
-    if scr == 1 then
-        
-    end
-
-    if scr == 2 then
-        
-    end
-    
-    if scr == 3 then
-        
-    end
-end
-
-
-function Bot.join(place)
+function Bot.join(place, jobId)
     game.Players.LocalPlayer:Kick("Joining..")
-    game:GetService("TeleportService"):Teleport(place, game.Players.LocalPlayer)
+    game:GetService("TeleportService"):TeleportToPlaceInstance(place, jobId, game.Players.LocalPlayer)
 end
 
 function Bot.rejoin()
+    game.Players.LocalPlayer:Kick("Rejoining..")
     TeleportService:TeleportToPlaceInstance(game.placeId, game.jobId, game.Players.LocalPlayer)
 end
 
@@ -81,12 +67,4 @@ end
 function Bot.run(scr)
     loadstring(scr)()
 end
-function Bot.antiafk(trueorfalse)
-    _G.AntiAfkOpened = trueorfalse
-end
 
-while _G.AntiAfkOpened do wait()
-    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    wait(1)
-    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end

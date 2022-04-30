@@ -22,7 +22,7 @@ getgenv().kickedd = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.Chi
         for i = 1, #history do
             concat[#concat + 1] = history[i].message;
         end
-        messagebox("you like report this error to developers?\nyour report file: "..sendReport(table.concat(concat, '\n')).."\nplease contact to developers\ndiscord: only#1337","looks like a error",0)
+        messagebox("do you like report this error to developers?\nyour report file: "..sendReport(table.concat(concat, '\n')).."\nplease contact to developers\ndiscord: only#1337","looks like a error",0)
     end
 end)
 

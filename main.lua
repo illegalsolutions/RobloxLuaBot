@@ -37,8 +37,8 @@ function Bot.jump()
     game.Players.LocalPlayer.Character.Humanoid.Jump = true
 end
 
-function Bot.sit()
-    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+function Bot.sit(tof)
+    game.Players.LocalPlayer.Character.Humanoid.Sit = tof
 end
 
 function Bot.exit()

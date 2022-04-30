@@ -27,7 +27,7 @@ function Bot.exit()
     game:Shutdown()
 end
 
-function Bot.Chat(msg)
+function Bot.chat(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg,"All")
 end
 

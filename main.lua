@@ -1,13 +1,31 @@
 --[[
 Made by AtKnSploits and OnlySploits
 --]]
-
+if is_synapse_function then
 
 local StarterGui = game:GetService("StarterGui")
 local TeleportService = game:GetService("TeleportService")
 local Player = game.Players.LocalPlayer
 local Chat = game:GetService("Chat")
 local vu = game:GetService("VirtualUser")
+local LogService = Game:GetService('LogService')
+local history = LogService:GetLogHistory()
+
+function sendReport(paste)
+    local response = syn.request({Url = "https://hastebin-plus.herokuapp.com/documents",Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = paste})
+    local key = string.split(response.Body, '"')
+    return "https://hastebin-plus.herokuapp.com/"..key[4]
+end
+
+getgenv().kickedd = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
+    if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
+        local concat = {}
+        for i = 1, #history do
+            concat[#concat + 1] = history[i].message;
+        end
+        messagebox("you like report this error to developers?\nyour report file: "..sendReport(table.concat(concat, '\n')).."\nplease contact to developers\ndiscord: only#1337","looks like a error",0)
+    end
+end)
 
 local Bot = {}
 
@@ -41,7 +59,7 @@ function Bot.findbackdoorandlag(path)
         end
     end
 end
-
+end
 function Bot.join(place, jobId)
     game.Players.LocalPlayer:Kick("Joining..")
     game:GetService("TeleportService"):TeleportToPlaceInstance(place, jobId, game.Players.LocalPlayer)

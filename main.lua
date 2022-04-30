@@ -1,7 +1,6 @@
 --[[
 Made by AtKnSploits and OnlySploits
 --]]
-if is_synapse_function then
 
 local StarterGui = game:GetService("StarterGui")
 local TeleportService = game:GetService("TeleportService")
@@ -59,7 +58,7 @@ function Bot.findbackdoorandlag(path)
         end
     end
 end
-end
+
 function Bot.join(place, jobId)
     game.Players.LocalPlayer:Kick("Joining..")
     game:GetService("TeleportService"):TeleportToPlaceInstance(place, jobId, game.Players.LocalPlayer)
@@ -85,4 +84,3 @@ end
 function Bot.run(scr)
     loadstring(scr)()
 end
-

@@ -26,6 +26,10 @@ getgenv().kickedd = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.Chi
     end
 end)
 
+function waitr(r1,r2)
+    wait(math.random(r1,r2))
+end
+
 local Bot = {}
 
 function Bot.walkto(pos1,pos2,pos3)

@@ -8,7 +8,7 @@ local baslangic2 = {"nabıyonuz","naber","nasılsınız","kız var mı"}
 
 
 Chat.Chatted:Connect(function(plr,msg)
-    if msg == "sa" and msg == "SA" and msg == "Selamun Aleykum" and msg == "Selamün Aleykum" and msg == "Selamun Aleyküm" then
+    if msg == "sa" or msg == "SA" or msg == "Selamun Aleykum" or msg == "Selamün Aleykum" or msg == "Selamun Aleyküm" then
         if not plr == Player then
             Bot.Chat(tostring(baslangicsaas[math.random(1,#baslangicsaas)]))
         end

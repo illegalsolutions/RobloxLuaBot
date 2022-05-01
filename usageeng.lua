@@ -9,7 +9,7 @@ local startermessage = {"What's going on"}
 
 
 Chat.Chatted:Connect(function(plr,msg)
-    if msg == "hello" and msg == "Hello" and msg == "hi" and msg == "Hi" then
+    if msg == "hello" or msg == "Hello" or msg == "hi" or msg == "Hi" then
         if not plr == Player then
             Bot.Chat(tostring(reply[math.random(1,#reply)]))
         end
